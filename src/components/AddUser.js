@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import posed from "react-pose";
 import UserConsumer from "../context";
-import axios from 'axios';
-
+import axios from "axios";
 
 const Animation = posed.div({
   visible: {
@@ -45,10 +44,9 @@ class AddUser extends Component {
     const newUser = {
       name,
       job,
-    }
+    };
 
-    const response = await axios.post('http://localhost:3004/users', newUser);
-
+    const response = await axios.post("http://localhost:3004/users", newUser);
     dispatch({
       type: "ADD_USER",
       payload: response.data,
@@ -61,7 +59,6 @@ class AddUser extends Component {
     return (
       <UserConsumer>
         {(value) => {
-
           const { dispatch } = value;
 
           return (

@@ -31,10 +31,12 @@ export class UserProvider extends Component {
   };
 
   componentDidMount = async () => {
-    const response = await axios.get("http://localhost:3004/users");
-    this.setState({
-      users: response.data,
-    });
+    const response = await axios.get(
+      "http://localhost/context-api-reactjs/api/db.php"
+      // http://localhost:3004/users
+    );
+
+    this.setState({ users: response.data });
   };
 
   render() {
